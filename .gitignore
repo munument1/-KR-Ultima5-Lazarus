@@ -1,0 +1,21 @@
+# Dungeon Siege / Lazarus proprietary game resources
+*.dsres
+*.dsm
+*.dsmap
+Language.dll
+
+# Generated test output
+U5L_Korean_Font_Test/
+U5L_Korean_Font_Test*/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local translation/work files
+*.bak
+*.tmp
+.DS_Store
+Thumbs.db
