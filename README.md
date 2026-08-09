@@ -23,7 +23,7 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 4. `Create_Ultima_V_Lazarus_Shortcut.cmd`를 더블클릭합니다.
 5. 바탕화면에 만들어진 `Ultima V - Lazarus v1.20` 바로가기로 실행합니다.
 
-ZIP SHA-256: `554AFDE77CD5BD8A4159200703FCF78D8510948113F82AD6FBBB94D4D44C8BD3`
+ZIP SHA-256: `794435219B41F781455F77D12ADAB3164AEF68A4195E9EC952E8C5E0D2DA46E7`
 
 기본 붙여넣기 대상은 다음 위치입니다.
 
@@ -118,7 +118,7 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 
 - 환경에 따라 글자 `떻`의 모양이 깨질 수 있으나 문맥은 판독 가능합니다.
 - 간판·효과음 자막 등 PSD 이미지에 그려진 81개 텍스트는 이번 패치 대상이 아닙니다.
-- B102는 정적 무결성 검증을 통과했지만 추가 문구의 게임 내 회귀 테스트는 계속 진행 중입니다.
+- B102는 정적 무결성 검증과 추가 문구의 게임 내 스모크 테스트를 통과했습니다.
 
 ## 번역 데이터와 도구
 

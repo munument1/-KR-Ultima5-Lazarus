@@ -29,6 +29,7 @@
     "b098_b102_display_occurrences": 479,
     "b098_b102_behavior_support_occurrences": 102,
     "full_tank_confirmed_display_remaining": 0,
+    "runtime_smoke_test": "passed",
     "image_text_included": false
   }
 }
