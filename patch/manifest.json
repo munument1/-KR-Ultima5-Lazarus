@@ -1,0 +1,31 @@
+{
+  "patch_version": "B097",
+  "target": "Ultima V: Lazarus 1.20 for Dungeon Siege 1",
+  "files": {
+    "lazarus_logic.dsres": {
+      "source_size": 4447392,
+      "source_sha256": "30BBA747FCDD38A4FFA0C5D2FA7234B5BC33DEF3E83B7F63DB43DCE1BBB3B19B",
+      "target_size": 3633640,
+      "target_sha256": "B9F59C85E5E851C9CC5F855D2648C99104F5BE65F8371C41DECF9050F44A0259",
+      "delta": "lazarus_logic.dsres.u5kdelta"
+    },
+    "britannia_logic.dsres": {
+      "source_size": 1536119,
+      "source_sha256": "A97CAEB79DF4FA5B4576E66010B60D00365CFDBF1ED2045F05C9ADD13D16937D",
+      "target_size": 1561343,
+      "target_sha256": "A2D19EED74A501AFF5846F572F04FCEA09C8422B336BB2BE53AF13576248F2D7",
+      "delta": "britannia_logic.dsres.u5kdelta"
+    },
+    "zzz_U5K_Text_OnDemand.dsres": {
+      "target_size": 1263020,
+      "target_sha256": "F3E7A06DEF763EA77E26EB92D81AB270A1995A67F24229431AF3E9763D6E508B",
+      "content": "Project-created Korean text storage tank"
+    }
+  },
+  "translation": {
+    "sheet_rows_b001_b096": 23907,
+    "blank_korean_rows": 0,
+    "b097_residual_occurrences": 57,
+    "image_text_included": false
+  }
+}

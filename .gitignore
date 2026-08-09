@@ -4,6 +4,9 @@
 *.dsmap
 Language.dll
 
+# The project-created Korean text storage tank is intentionally distributed.
+!patch/zzz_U5K_Text_OnDemand.dsres
+
 # Generated test output
 U5L_Korean_Font_Test/
 U5L_Korean_Font_Test*/
@@ -11,6 +14,7 @@ U5L_Korean_Font_Test*/
 # Python
 __pycache__/
 *.py[cod]
+.pytest_cache/
 .venv/
 venv/
 
