@@ -1,0 +1,37 @@
+Ultima V: Lazarus 한국어 패치 B097 - 붙여넣기 설치
+=====================================================
+
+[필수 조건]
+
+1. Dungeon Siege 1을 설치합니다.
+2. Ultima V: Lazarus 1.20을 설치합니다.
+
+한국어 Language.dsres와 Lazarus 글꼴 설정이 패키지에 포함되어 있으므로
+별도의 Dungeon Siege 1 한글 패치를 먼저 설치할 필요가 없습니다.
+
+[설치]
+
+1. 게임 폴더의 다음 파일을 반드시 백업합니다.
+   Resources\lazarus_logic.dsres
+   Resources\britannia_logic.dsres
+   Resources\Language.dsres (기존 파일이 있을 때)
+
+2. 이 폴더 안의 Resources 폴더를 Dungeon Siege 1 게임 폴더에
+   그대로 붙여넣고 파일 교체에 동의합니다.
+
+   기본 경로:
+   C:\Games\Steam\steamapps\common\Dungeon Siege 1
+
+3. Create_Ultima_V_Lazarus_Shortcut.cmd를 더블클릭합니다.
+   바탕화면에 Ultima V - Lazarus v1.20 바로가기가 생성됩니다.
+
+[제거]
+
+백업한 lazarus_logic.dsres와 britannia_logic.dsres를 원래 위치로 복원하고
+Resources\zzz_U5K_Text_OnDemand.dsres를 삭제합니다.
+
+[알려진 제한]
+
+- 일부 서적은 페이지 넘김을 반복하면 같은 위치로 돌아갑니다.
+  위아래 스크롤로 전체 본문을 읽을 수 있습니다.
+- PSD 이미지에 그려진 텍스트 81개는 번역 대상에서 제외했습니다.

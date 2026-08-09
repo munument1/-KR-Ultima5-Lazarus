@@ -2,14 +2,12 @@
 
 Dungeon Siege 1 기반 리메이크 모드 **Ultima V: Lazarus 1.20**의 한국어 번역 프로젝트입니다.
 
-현재 공개본은 **B097 프리뷰**입니다. 번역표 B001~B096의 23,907개 항목과 별도 잔존 문자열 57곳을 게임 리소스에 반영했습니다. 게임 원본 DSRES는 저장소에 포함하지 않으며, 설치 도구가 사용자의 원본 파일에 델타를 적용합니다.
+현재 공개본은 **B097 프리뷰**입니다. 번역표 B001~B096의 23,907개 항목과 별도 잔존 문자열 57곳을 게임 리소스에 반영했습니다. 바로 붙여넣는 완성 패키지와 원본 보존형 델타 설치 방식을 함께 제공합니다.
 
 ## 준비물
 
 - Windows용 Dungeon Siege 1
 - Ultima V: Lazarus 1.20
-- Python 3.10 이상
-- 한국어를 출력할 수 있는 Dungeon Siege `Language.dsres`
 
 기본 설치 예시는 다음 경로를 사용합니다.
 
@@ -17,7 +15,27 @@ Dungeon Siege 1 기반 리메이크 모드 **Ultima V: Lazarus 1.20**의 한국�
 C:\Games\Steam\steamapps\common\Dungeon Siege 1
 ```
 
-## 한국어 패치 설치
+## 가장 간단한 설치: Resources 붙여넣기
+
+1. 게임 폴더의 `Resources\lazarus_logic.dsres`, `Resources\britannia_logic.dsres`, 기존 `Resources\Language.dsres`가 있다면 모두 백업합니다.
+2. [`Ultima_V_Lazarus_Korean_B097_Copy_Paste.zip`](release/Ultima_V_Lazarus_Korean_B097_Copy_Paste.zip)을 받아 압축을 풉니다.
+3. 압축 안의 `Copy_to_Dungeon_Siege_1\Resources` 폴더를 Dungeon Siege 1 폴더에 그대로 붙여넣고 덮어씁니다.
+4. `Create_Ultima_V_Lazarus_Shortcut.cmd`를 더블클릭합니다.
+5. 바탕화면에 만들어진 `Ultima V - Lazarus v1.20` 바로가기로 실행합니다.
+
+ZIP SHA-256: `83DFDE5795ABC492A759A32053E32E26B9A7EF3586C63018E52178EE90FBE788`
+
+기본 붙여넣기 대상은 다음 위치입니다.
+
+```text
+C:\Games\Steam\steamapps\common\Dungeon Siege 1
+```
+
+붙여넣기 폴더에는 실제 테스트에 사용한 한국어 `Language.dsres`와 Lazarus 대화 글꼴 매핑이 함께 들어 있습니다. **별도의 Dungeon Siege 1 한글 패치를 먼저 설치할 필요가 없습니다.**
+
+## 원본 파일 보존형 설치: Python 델타
+
+게임 원본을 포함한 완성 DSRES를 직접 받지 않고 사용자 원본에서 생성하려면 다음 방식을 사용합니다. Python 3.10 이상이 필요합니다.
 
 먼저 게임의 `Resources` 폴더에 수정되지 않은 Lazarus 1.20 원본 파일이 있어야 합니다.
 
@@ -41,9 +59,9 @@ python tools\apply_korean_patch.py "C:\Games\Steam\steamapps\common\Dungeon Sieg
 
 지원하지 않는 해시가 나오면 다른 모드나 과거 패치로 변형된 파일입니다. Lazarus 1.20 원본 두 파일을 복원한 뒤 다시 실행하세요.
 
-## 한글 폰트 적용
+## 다른 한글 패치나 글꼴 사용
 
-본문 패치와 별도로 Lazarus 대화용 폰트 키를 한글 글꼴에 연결해야 합니다. `tools/build_font_test.py`는 사용자가 보유한 한국어판 `Language.dsres`를 기반으로 새 파일을 만듭니다.
+붙여넣기 패키지는 `굴림 18` 글꼴이 설정된 한국어 `Language.dsres`를 포함하므로 이 과정은 선택 사항입니다. 다른 Dungeon Siege 1 한글 패치나 Windows 글꼴을 사용하려면 `tools/build_font_test.py`로 사용자의 `Language.dsres`를 보강할 수 있습니다.
 
 ```powershell
 python tools\build_font_test.py `
@@ -105,9 +123,10 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 - `tools/apply_korean_patch.py`: 사용자 원본에 한국어 패치 설치
 - `tools/build_font_test.py`: 사용자 소유 한국어 `Language.dsres`에 Lazarus 폰트 키 추가
 - `tools/make_u5k_delta.py`: 유지보수용 델타 생성기
+- `release/Copy_to_Dungeon_Siege_1`: 붙여넣기용 완성 파일과 바로가기 생성 도구
 
 ## 저작권과 라이선스
 
-이 저장소는 Dungeon Siege, Ultima V: Lazarus, 한국 정발판의 원본 로직 DSRES, `Language.dll`, `Language.dsres`를 배포하지 않습니다. 델타는 사용자가 합법적으로 보유한 Lazarus 1.20 원본에만 적용됩니다. `zzz_U5K_Text_OnDemand.dsres`는 이 프로젝트에서 생성한 한국어 문자열 저장용 탱크입니다.
+붙여넣기용 `lazarus_logic.dsres`, `britannia_logic.dsres`, `Language.dsres`는 한국어 출력을 위해 수정된 리소스이며 게임·모드·기존 한국어 데이터의 권리는 각 권리자에게 있습니다. 이 파일들은 MIT License 적용 대상이 아닙니다. 수정 로직 DSRES 배포를 피하려는 경우 Python 델타 설치 방식을 사용할 수 있습니다.
 
 저장소에서 직접 작성한 도구 코드는 [MIT License](LICENSE)로 배포합니다. 게임 원본 데이터와 제3자 자산에는 이 라이선스가 적용되지 않습니다.
