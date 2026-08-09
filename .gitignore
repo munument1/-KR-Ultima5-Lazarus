@@ -6,6 +6,10 @@ Language.dll
 
 # The project-created Korean text storage tank is intentionally distributed.
 !patch/zzz_U5K_Text_OnDemand.dsres
+!release/Copy_to_Dungeon_Siege_1/Resources/lazarus_logic.dsres
+!release/Copy_to_Dungeon_Siege_1/Resources/britannia_logic.dsres
+!release/Copy_to_Dungeon_Siege_1/Resources/zzz_U5K_Text_OnDemand.dsres
+!release/Copy_to_Dungeon_Siege_1/Resources/Language.dsres
 
 # Generated test output
 U5L_Korean_Font_Test/
