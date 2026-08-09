@@ -115,16 +115,38 @@ def patch_language_dsres(source: Path, destination: Path, font_name: str, font_s
     source_key = SOURCE_FONT_KEY.decode("ascii")
     target_key = TARGET_FONT_KEY.decode("ascii")
 
-    source_lines = [line for line in text.splitlines() if source_key in line]
+    lines = text.splitlines(keepends=True)
+    source_lines = [line for line in lines if source_key in line]
     if len(source_lines) != 1:
         raise RuntimeError(
             f"Expected exactly one {source_key} mapping in global_settings.gas, found {len(source_lines)}."
         )
 
-    old_line = source_lines[0]
-    indent = old_line[: len(old_line) - len(old_line.lstrip())]
-    new_line = f'{indent}{target_key} = "{font_name},{font_size}";'
-    patched_text = text.replace(old_line, new_line, 1)
+    target_lines = [line for line in lines if target_key in line]
+    if len(target_lines) > 1:
+        raise RuntimeError(
+            f"Expected at most one {target_key} mapping in global_settings.gas, found {len(target_lines)}."
+        )
+
+    if target_lines:
+        old_line = target_lines[0]
+        line_ending = "\r\n" if old_line.endswith("\r\n") else "\n"
+        indent = old_line[: len(old_line) - len(old_line.lstrip())]
+        new_line = f'{indent}{target_key} = "{font_name},{font_size}";{line_ending}'
+        patched_text = text.replace(old_line, new_line, 1)
+    else:
+        source_line = source_lines[0]
+        line_ending = "\r\n" if source_line.endswith("\r\n") else "\n"
+        indent = source_line[: len(source_line) - len(source_line.lstrip())]
+
+        # Preserve the original 20p mapping. The Korean release stores a long
+        # explanatory comment after it; replacing only that comment provides
+        # enough compressed space for the additional Lazarus mapping without
+        # rebuilding or redistributing the rest of the Tank.
+        source_assignment = source_line.split(";", 1)[0].rstrip() + ";"
+        target_assignment = f'{indent}{target_key} = "{font_name},{font_size}";'
+        replacement = source_assignment + line_ending + target_assignment + line_ending
+        patched_text = text.replace(source_line, replacement, 1)
     patched_raw = patched_text.encode("cp949")
 
     new_compressed = zlib.compress(patched_raw, 9)
@@ -164,9 +186,12 @@ def patch_language_dsres(source: Path, destination: Path, font_name: str, font_s
     expected = f'{target_key} = "{font_name},{font_size}";'
     if expected not in check_text:
         raise RuntimeError("Post-write verification failed: Lazarus font mapping was not found.")
+    if source_key not in check_text:
+        raise RuntimeError("Post-write verification failed: original 20p font mapping was lost.")
 
     print(f"Patched: {destination}")
     print(f"Mapping: {expected}")
+    print(f"Preserved: {source_key}")
     print(f"Compressed global_settings.gas: {compressed_size} -> {new_size} bytes")
 
 

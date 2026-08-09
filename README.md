@@ -17,13 +17,13 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 
 ## 가장 간단한 설치: Resources 붙여넣기
 
-1. 게임 폴더의 `Resources\lazarus_logic.dsres`, `Resources\britannia_logic.dsres`, 기존 `Resources\Language.dsres`가 있다면 모두 백업합니다.
+1. 게임 폴더의 `Resources\lazarus_logic.dsres`, `Resources\britannia_logic.dsres`, 기존 `Resources\Language.dsres`와 `Language.dll`이 있다면 모두 백업합니다.
 2. [`Ultima_V_Lazarus_Korean_B097_Copy_Paste.zip`](release/Ultima_V_Lazarus_Korean_B097_Copy_Paste.zip)을 받아 압축을 풉니다.
-3. 압축 안의 `Copy_to_Dungeon_Siege_1\Resources` 폴더를 Dungeon Siege 1 폴더에 그대로 붙여넣고 덮어씁니다.
+3. 압축 안의 `Copy_to_Dungeon_Siege_1` 폴더 내용 전체를 Dungeon Siege 1 폴더에 그대로 붙여넣고 덮어씁니다.
 4. `Create_Ultima_V_Lazarus_Shortcut.cmd`를 더블클릭합니다.
 5. 바탕화면에 만들어진 `Ultima V - Lazarus v1.20` 바로가기로 실행합니다.
 
-ZIP SHA-256: `83DFDE5795ABC492A759A32053E32E26B9A7EF3586C63018E52178EE90FBE788`
+ZIP SHA-256: `3CAEFF135669661E51E3681B084B3BF2566FB740CF3401AE7813FB080FAAE4BB`
 
 기본 붙여넣기 대상은 다음 위치입니다.
 
@@ -31,7 +31,7 @@ ZIP SHA-256: `83DFDE5795ABC492A759A32053E32E26B9A7EF3586C63018E52178EE90FBE788`
 C:\Games\Steam\steamapps\common\Dungeon Siege 1
 ```
 
-붙여넣기 폴더에는 실제 테스트에 사용한 한국어 `Language.dsres`와 Lazarus 대화 글꼴 매핑이 함께 들어 있습니다. **별도의 Dungeon Siege 1 한글 패치를 먼저 설치할 필요가 없습니다.**
+붙여넣기 폴더에는 제공받은 한글 패치의 `Language.dll`, 원래 글꼴 매핑을 보존한 `Language.dsres`, Lazarus 대화 글꼴 매핑이 함께 들어 있습니다. **별도의 Dungeon Siege 1 한글 패치를 먼저 설치할 필요가 없습니다.** 본편 한국어 음성용 `Voices.dsres`는 Lazarus 한글 출력에 필요하지 않아 제외했습니다.
 
 ## 원본 파일 보존형 설치: Python 델타
 
@@ -62,6 +62,8 @@ python tools\apply_korean_patch.py "C:\Games\Steam\steamapps\common\Dungeon Sieg
 ## 다른 한글 패치나 글꼴 사용
 
 붙여넣기 패키지는 `굴림 18` 글꼴이 설정된 한국어 `Language.dsres`를 포함하므로 이 과정은 선택 사항입니다. 다른 Dungeon Siege 1 한글 패치나 Windows 글꼴을 사용하려면 `tools/build_font_test.py`로 사용자의 `Language.dsres`를 보강할 수 있습니다.
+
+제공받은 Dungeon Siege 1 한글 패치는 글꼴 하나만 쓰지 않습니다. 활성 매핑은 기본·12p·자막에 `굴림`, 14p·16p·20p에 `궁서`를 사용합니다. B097은 이 여섯 매핑을 그대로 보존하고 Lazarus 대화용 `굴림 18` 매핑 하나만 추가합니다.
 
 ```powershell
 python tools\build_font_test.py `
@@ -101,6 +103,7 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 - 아이올로 일반 대화 진행
 - 사망 처리 후 월드 이동
 - 서적 본문 114권 한국어 출력 및 닫기 버튼 동작
+- 서적 페이지 이동·세로 스크롤 동작이 원본 Lazarus와 동일함을 확인
 - B001~B096 한국어 빈칸 0개
 - DSRES 재추출 및 비수정 리소스 무결성 검증
 - 대화 텍스트 참조 34,871개와 저장 항목 34,877개 검증
@@ -110,7 +113,6 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 
 ## 알려진 제한
 
-- 일부 서적은 페이지 넘김을 반복하면 같은 위치로 돌아갑니다. 위아래 스크롤로 전체 본문을 읽을 수 있고 X 버튼은 정상 동작합니다.
 - 환경에 따라 글자 `떻`의 모양이 깨질 수 있으나 문맥은 판독 가능합니다.
 - 간판·효과음 자막 등 PSD 이미지에 그려진 81개 텍스트는 이번 패치 대상이 아닙니다.
 - B097은 정적 무결성 검증을 통과했지만 전체 플레이 회귀 테스트는 계속 진행 중입니다.
@@ -127,6 +129,6 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 
 ## 저작권과 라이선스
 
-붙여넣기용 `lazarus_logic.dsres`, `britannia_logic.dsres`, `Language.dsres`는 한국어 출력을 위해 수정된 리소스이며 게임·모드·기존 한국어 데이터의 권리는 각 권리자에게 있습니다. 이 파일들은 MIT License 적용 대상이 아닙니다. 수정 로직 DSRES 배포를 피하려는 경우 Python 델타 설치 방식을 사용할 수 있습니다.
+붙여넣기용 `lazarus_logic.dsres`, `britannia_logic.dsres`, `Language.dsres`, `Language.dll`은 한국어 출력을 위해 포함하거나 수정한 리소스이며 게임·모드·기존 한국어 데이터의 권리는 각 권리자에게 있습니다. 이 파일들은 MIT License 적용 대상이 아닙니다. 수정 로직 DSRES 배포를 피하려는 경우 Python 델타 설치 방식을 사용할 수 있습니다.
 
 저장소에서 직접 작성한 도구 코드는 [MIT License](LICENSE)로 배포합니다. 게임 원본 데이터와 제3자 자산에는 이 라이선스가 적용되지 않습니다.

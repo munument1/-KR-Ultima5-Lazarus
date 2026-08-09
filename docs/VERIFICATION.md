@@ -8,7 +8,7 @@
 | `britannia_logic.dsres` | 1,561,343 | `A2D19EED74A501AFF5846F572F04FCEA09C8422B336BB2BE53AF13576248F2D7` |
 | `zzz_U5K_Text_OnDemand.dsres` | 1,263,020 | `F3E7A06DEF763EA77E26EB92D81AB270A1995A67F24229431AF3E9763D6E508B` |
 
-붙여넣기 ZIP `Ultima_V_Lazarus_Korean_B097_Copy_Paste.zip`의 SHA-256은 `83DFDE5795ABC492A759A32053E32E26B9A7EF3586C63018E52178EE90FBE788`입니다. ZIP 안의 한국어 `Language.dsres` SHA-256은 `B90BF5EE1C116971151147FCCBD1929D66F9C2B98870056333AE1AA16FA89D3F`이며 Lazarus 대화 글꼴 `b_gui_fnt_20p_laztalk = "굴림,18"`을 포함합니다.
+붙여넣기 ZIP `Ultima_V_Lazarus_Korean_B097_Copy_Paste.zip`의 SHA-256은 `3CAEFF135669661E51E3681B084B3BF2566FB740CF3401AE7813FB080FAAE4BB`입니다. ZIP 안의 한국어 `Language.dsres` SHA-256은 `97DD77E56F51A19ED17722A28CCF31C84E99791B717AEEA2646FDF835A52EAA1`, `Language.dll` SHA-256은 `69B08E7CC3AF488B2E23F6CB5548C8369ABEE296090886080FF29BAED70A278B`입니다. 기존 한글판의 활성 글꼴 매핑 여섯 개를 모두 보존하고 Lazarus 대화 글꼴 `b_gui_fnt_20p_laztalk = "굴림,18"`만 추가했습니다.
 
 ## 정적 검증
 
@@ -29,8 +29,7 @@
 - 사망 처리 후 월드 이동 정상
 - 「브리타니아의 훌륭한 노래들」 포함 서적 본문 출력
 - 서적 좌우 첫 페이지 분리 및 X 닫기 정상
-
-서적 페이지 넘김은 한 번 진행된 뒤 같은 위치로 돌아가는 제한이 있습니다. 세로 스크롤로 전체 내용을 읽을 수 있으므로 B097에서는 이 상태를 허용했습니다.
+- 페이지 이동과 세로 스크롤 방식이 원본 Ultima V: Lazarus에서도 동일함을 확인
 
 ## 의도적으로 제외한 항목
 
