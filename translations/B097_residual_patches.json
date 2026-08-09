@@ -1,0 +1,261 @@
+{
+  "source_literal_occurrences": 57,
+  "mapping_checks": 32,
+  "active_english_remaining": 0,
+  "missing_korean_storage": 0,
+  "resource_checks": 12,
+  "checks": [
+    {
+      "resource": "world/global/skrits/k_inc_lazarus_convo_api.skrit",
+      "english": "milord",
+      "korean": "나리",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 4
+    },
+    {
+      "resource": "world/global/skrits/k_inc_lazarus_convo_api.skrit",
+      "english": "milady",
+      "korean": "마님",
+      "expected_source_occurrences": 1,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/skrits/k_inc_lazarus_convo_api.skrit",
+      "english": "he",
+      "korean": "그",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 9
+    },
+    {
+      "resource": "world/global/skrits/k_inc_lazarus_convo_api.skrit",
+      "english": "she",
+      "korean": "그녀",
+      "expected_source_occurrences": 1,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 3
+    },
+    {
+      "resource": "world/global/skrits/k_inc_lazarus_convo_api.skrit",
+      "english": "his",
+      "korean": "그의",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 4
+    },
+    {
+      "resource": "world/global/skrits/k_inc_lazarus_convo_api.skrit",
+      "english": "hers",
+      "korean": "그녀의",
+      "expected_source_occurrences": 1,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/skrits/k_inc_lazarus_convo_api.skrit",
+      "english": "Hers",
+      "korean": "그녀의",
+      "expected_source_occurrences": 1,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_castlebritanniaguardfemale_npc.skrit",
+      "english": "sir",
+      "korean": "나리",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_castlebritanniaguardmale_npc.skrit",
+      "english": "sir",
+      "korean": "나리",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_genericguardf_npc.skrit",
+      "english": "sir",
+      "korean": "나리",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_genericguardm_npc.skrit",
+      "english": "sir",
+      "korean": "나리",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_jhelomguardmale_npc.skrit",
+      "english": "sir",
+      "korean": "나리",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_tomoka_npc.skrit",
+      "english": "morning",
+      "korean": "아침",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_tomoka_npc.skrit",
+      "english": "afternoon",
+      "korean": "오후",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_tomoka_npc.skrit",
+      "english": "evening",
+      "korean": "저녁",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "fine",
+      "korean": "맑은",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "rainy",
+      "korean": "비 오는",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "morning",
+      "korean": "아침",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "afternoon",
+      "korean": "오후",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 4
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "evening",
+      "korean": "저녁",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "fork",
+      "korean": "포크",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "hoe",
+      "korean": "괭이",
+      "expected_source_occurrences": 4,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 8
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "carving",
+      "korean": "조각품",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "eat",
+      "korean": "식사 중",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "farm",
+      "korean": "농사 중",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "carve",
+      "korean": "조각 중",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/global/conversations/conversation_yasuda_npc.skrit",
+      "english": "fish",
+      "korean": "낚시 중",
+      "expected_source_occurrences": 2,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/contentdb/components/spells/spell.skrit",
+      "english": "Spell cannot be cast when enemies are near",
+      "korean": "적이 근처에 있을 때는 주문을 시전할 수 없습니다.",
+      "expected_source_occurrences": 1,
+      "active_english_remaining": 0,
+      "korean_storage_matches": 1
+    },
+    {
+      "resource": "ui/interfaces/backend/character/character.gas",
+      "english": "melee",
+      "korean": "근접",
+      "expected_source_occurrences": 1,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "ui/interfaces/backend/character/character.gas",
+      "english": "ranged",
+      "korean": "원거리",
+      "expected_source_occurrences": 1,
+      "korean_storage_matches": 2
+    },
+    {
+      "resource": "world/contentdb/templates/britannia/actors/pb_ambients.gas",
+      "english": "cow",
+      "korean": "소",
+      "expected_source_occurrences": 1,
+      "korean_storage_matches": 1
+    },
+    {
+      "resource": "world/contentdb/templates/britannia/actors/pb_ambient_one_hitters.gas",
+      "english": "fish",
+      "korean": "물고기",
+      "expected_source_occurrences": 1,
+      "korean_storage_matches": 1
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+*.tsv text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.dsres binary
+*.u5kdelta binary
