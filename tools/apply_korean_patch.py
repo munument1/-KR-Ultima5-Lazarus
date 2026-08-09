@@ -81,7 +81,7 @@ def main() -> int:
     if all(state == "patched" for state in states.values()):
         installed_text = resources / text_tank.name
         if installed_text.is_file() and sha256_file(installed_text) == files[text_tank.name]["target_sha256"]:
-            print("한국어 패치 B097이 이미 정상 설치되어 있습니다.")
+            print("한국어 패치 B102가 이미 정상 설치되어 있습니다.")
             return 0
         shutil.copy2(text_tank, installed_text)
         print(f"누락된 텍스트 탱크를 복구했습니다: {installed_text}")
@@ -93,7 +93,7 @@ def main() -> int:
     game_root = resources.parent
     backup_root = game_root / "KoreanPatchBackups"
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    backup_dir = backup_root / f"before_B097_{timestamp}"
+    backup_dir = backup_root / f"before_B102_{timestamp}"
 
     try:
         with tempfile.TemporaryDirectory(prefix="u5k_patch_", dir=game_root) as temp_name:
@@ -121,7 +121,7 @@ def main() -> int:
     except (OSError, DeltaError) as exc:
         raise SystemExit(f"설치 실패: {exc}") from exc
 
-    print("\nUltima V: Lazarus 한국어 패치 B097 설치가 완료되었습니다.")
+    print("\nUltima V: Lazarus 한국어 패치 B102 설치가 완료되었습니다.")
     print(f"백업: {backup_dir}")
     print("게임 실행 전 한국어 폰트 패치도 적용했는지 확인하세요.")
     return 0

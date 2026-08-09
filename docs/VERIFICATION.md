@@ -1,14 +1,14 @@
-# B097 검증 기록
+# B102 검증 기록
 
 ## 빌드 결과
 
 | 파일 | 크기 | SHA-256 |
 |---|---:|---|
-| `lazarus_logic.dsres` | 3,633,640 | `B9F59C85E5E851C9CC5F855D2648C99104F5BE65F8371C41DECF9050F44A0259` |
-| `britannia_logic.dsres` | 1,561,343 | `A2D19EED74A501AFF5846F572F04FCEA09C8422B336BB2BE53AF13576248F2D7` |
-| `zzz_U5K_Text_OnDemand.dsres` | 1,263,020 | `F3E7A06DEF763EA77E26EB92D81AB270A1995A67F24229431AF3E9763D6E508B` |
+| `lazarus_logic.dsres` | 3,634,648 | `18D7D1D98049CD2446A16B35E591EA642AFB1DE5C31C7A3FAF614A7283BF3B36` |
+| `britannia_logic.dsres` | 1,564,671 | `5A7A7EA408917CE8B15C82C52419C3B87032D91C8038ECF8E8D76F59BEA21CF2` |
+| `zzz_U5K_Text_OnDemand.dsres` | 1,265,770 | `CD8D49743BA1DA20FFDA6CC95E7B5EC811E13BEBE3D0FFA3FBC90DAA94C2443E` |
 
-붙여넣기 ZIP SHA-256은 `D39374A4DF0C8049F501FEC1C7864E5AA9E0CB15F667BDC395C29B2B98FF2499`입니다. ZIP 안의 한국어 `Language.dsres` SHA-256은 `97DD77E56F51A19ED17722A28CCF31C84E99791B717AEEA2646FDF835A52EAA1`, Steam 호환형 `Language.dll` SHA-256은 `E59712897B932E80C88DA15165AF5A12475313F4E01C27D41151B3BBA1547559`입니다. 기존 한글판의 활성 글꼴 매핑 여섯 개를 모두 보존하고 Lazarus 대화 글꼴 `b_gui_fnt_20p_laztalk = "굴림,18"`만 추가했습니다.
+붙여넣기 ZIP SHA-256은 `554AFDE77CD5BD8A4159200703FCF78D8510948113F82AD6FBBB94D4D44C8BD3`입니다. ZIP 안의 한국어 `Language.dsres` SHA-256은 `97DD77E56F51A19ED17722A28CCF31C84E99791B717AEEA2646FDF835A52EAA1`, Steam 호환형 `Language.dll` SHA-256은 `E59712897B932E80C88DA15165AF5A12475313F4E01C27D41151B3BBA1547559`입니다. 기존 한글판의 활성 글꼴 매핑 여섯 개를 모두 보존하고 Lazarus 대화 글꼴 `b_gui_fnt_20p_laztalk = "굴림,18"`만 추가했습니다.
 
 원본과 재패킹 `Language.dll`의 RT_STRING 428개 및 RCDATA 1개를 키·언어·크기·SHA-256으로 비교한 결과 리소스 내용 불일치는 0개였습니다. 재패킹본은 한글과 공용 UI가 정상이며, 원본 DLL에서 재현된 종료 시 SmartHeap `MEM_BAD_POINTER` 경고가 발생하지 않는 것을 실기로 확인했습니다.
 
@@ -23,6 +23,10 @@
 - 수정하지 않은 리소스 바이트 불일치 0
 - B096: 172행, 181개 발생 위치 확인
 - B097: 12개 리소스, 활성 영문 57개 발생 위치 치환, 잔존 0
+- B098~B102: 표시 미번역 479곳 및 동작 보조 문자열 102곳 치환
+- 확정 표시 미번역 0, 동적 호칭 미번역 0
+- 재검수 제외 후보 460곳: 내부 참조 145, 디버그 진단 201, PB 데모 75, 미사용 멀티플레이 32, 의도된 외국어·의성어 5, 연락처 1, 파서 오탐 1
+- B097 기존 수정 57곳 회귀 검증 통과, 누락 저장 문자열 0
 
 ## 실기 확인
 

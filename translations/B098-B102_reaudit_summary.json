@@ -1,0 +1,49 @@
+{
+  "version": "B102",
+  "source": "Ultima V: Lazarus 1.20 original logic resources",
+  "phases": {
+    "B098": {
+      "visible_occurrences": 104,
+      "behavior_support_occurrences": 7
+    },
+    "B099": {
+      "visible_gas_occurrences": 277,
+      "unique_strings": 196
+    },
+    "B100": {
+      "visible_conversation_occurrences": 89,
+      "behavior_support_occurrences": 95
+    },
+    "B101": {
+      "visible_runtime_occurrences": 3
+    },
+    "B102": {
+      "visible_timed_effect_occurrences": 6
+    }
+  },
+  "totals": {
+    "visible_occurrences": 479,
+    "behavior_support_occurrences": 102,
+    "resource_replacements": 581
+  },
+  "final_audit": {
+    "confirmed_translated_display_remaining": 0,
+    "dynamic_display_remaining": 0,
+    "review_candidates_excluded": 460,
+    "excluded_breakdown": {
+      "contact_credit": 1,
+      "debug_diagnostic": 201,
+      "framework_demo": 75,
+      "intentional_foreign_or_onomatopoeia": 5,
+      "internal_reference": 145,
+      "parser_artifact": 1,
+      "unused_multiplayer_framework": 32
+    }
+  },
+  "regression": {
+    "b097_occurrences_preserved": 57,
+    "missing_korean_storage": 0,
+    "resource_path_sets_preserved": true,
+    "runtime_smoke_test": "pending"
+  }
+}
