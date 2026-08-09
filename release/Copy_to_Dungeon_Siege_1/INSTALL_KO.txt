@@ -9,6 +9,10 @@ Ultima V: Lazarus 한국어 패치 B097 - 붙여넣기 설치
 한국어 Language.dll, Language.dsres와 Lazarus 글꼴 설정이 패키지에 포함되어 있으므로
 별도의 Dungeon Siege 1 한글 패치를 먼저 설치할 필요가 없습니다.
 
+포함된 Language.dll은 원본 한국어 리소스 429개의 내용을 그대로 보존하고
+PE 리소스 컨테이너만 다시 패킹한 Steam 호환본입니다. 구형 원본 DLL에서
+게임 종료 시 발생하던 SmartHeap MEM_BAD_POINTER 경고를 방지합니다.
+
 [설치]
 
 1. 게임 폴더의 다음 파일을 반드시 백업합니다.

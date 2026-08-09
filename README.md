@@ -23,7 +23,7 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 4. `Create_Ultima_V_Lazarus_Shortcut.cmd`를 더블클릭합니다.
 5. 바탕화면에 만들어진 `Ultima V - Lazarus v1.20` 바로가기로 실행합니다.
 
-ZIP SHA-256: `3CAEFF135669661E51E3681B084B3BF2566FB740CF3401AE7813FB080FAAE4BB`
+ZIP SHA-256: `D39374A4DF0C8049F501FEC1C7864E5AA9E0CB15F667BDC395C29B2B98FF2499`
 
 기본 붙여넣기 대상은 다음 위치입니다.
 
@@ -31,7 +31,9 @@ ZIP SHA-256: `3CAEFF135669661E51E3681B084B3BF2566FB740CF3401AE7813FB080FAAE4BB`
 C:\Games\Steam\steamapps\common\Dungeon Siege 1
 ```
 
-붙여넣기 폴더에는 제공받은 한글 패치의 `Language.dll`, 원래 글꼴 매핑을 보존한 `Language.dsres`, Lazarus 대화 글꼴 매핑이 함께 들어 있습니다. **별도의 Dungeon Siege 1 한글 패치를 먼저 설치할 필요가 없습니다.** 본편 한국어 음성용 `Voices.dsres`는 Lazarus 한글 출력에 필요하지 않아 제외했습니다.
+붙여넣기 폴더에는 Steam 호환형 `Language.dll`, 원래 글꼴 매핑을 보존한 `Language.dsres`, Lazarus 대화 글꼴 매핑이 함께 들어 있습니다. **별도의 Dungeon Siege 1 한글 패치를 먼저 설치할 필요가 없습니다.** 본편 한국어 음성용 `Voices.dsres`는 Lazarus 한글 출력에 필요하지 않아 제외했습니다.
+
+Steam 호환형 `Language.dll`은 기존 한국어 리소스 429개의 내용을 바이트 단위로 모두 보존하고 PE 리소스 컨테이너만 Windows API로 다시 패킹했습니다. 기존 DLL에서 게임 종료 시 발생하던 SmartHeap `MEM_BAD_POINTER` 경고가 재패킹본에서는 나타나지 않는 것을 실기로 확인했습니다.
 
 ## 원본 파일 보존형 설치: Python 델타
 
@@ -67,8 +69,7 @@ python tools\apply_korean_patch.py "C:\Games\Steam\steamapps\common\Dungeon Sieg
 
 ```powershell
 python tools\build_font_test.py `
-  "C:\원본한국어판\Resources\Language.dsres" `
-  --language-dll "C:\원본한국어판\Language.dll"
+  "C:\원본한국어판\Resources\Language.dsres"
 ```
 
 기본 매핑은 다음과 같습니다.
@@ -77,7 +78,7 @@ python tools\build_font_test.py `
 b_gui_fnt_20p_laztalk = "굴림,18";
 ```
 
-생성된 `U5L_Korean_Font_Test`의 `Language.dll`과 `Resources\Language.dsres`를 게임 폴더의 같은 위치에 넣습니다. 기존 파일은 먼저 백업하세요. 다른 글꼴은 `--font`, 크기는 `--size`로 지정할 수 있습니다.
+생성된 `U5L_Korean_Font_Test\Resources\Language.dsres`를 게임 폴더의 같은 위치에 넣습니다. 기존 파일은 먼저 백업하세요. 다른 글꼴은 `--font`, 크기는 `--size`로 지정할 수 있습니다. `Language.dll`은 붙여넣기 패키지에 포함된 Steam 호환본을 유지하세요.
 
 ## Lazarus 실행 바로가기
 
