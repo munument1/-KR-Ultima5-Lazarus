@@ -2,7 +2,7 @@
 
 Dungeon Siege 1 기반 리메이크 모드 **Ultima V: Lazarus 1.20**의 한국어 번역 프로젝트입니다.
 
-현재 공개본은 **B102 프리뷰**입니다. 번역표 B001~B096의 23,907개 항목과 B097 잔존 문자열 57곳에 더해, Lazarus 1.20 원본 전체 재검수에서 확인한 표시 문구 479곳을 추가 반영했습니다. 바로 붙여넣는 완성 패키지와 원본 보존형 델타 설치 방식을 함께 제공합니다.
+현재 공개본은 **B103 프리뷰**입니다. 번역표 B001~B096의 23,907개 항목과 B097 잔존 문자열 57곳에 더해, Lazarus 1.20 원본 전체 재검수에서 확인한 표시 문구 491곳을 추가 반영했습니다. B103에서는 기존 추출 범위에서 빠졌던 공용 경비 일반·적대 대화도 보완했습니다. 바로 붙여넣는 완성 패키지와 원본 보존형 델타 설치 방식을 함께 제공합니다.
 
 ## 준비물
 
@@ -18,12 +18,12 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 ## 가장 간단한 설치: Resources 붙여넣기
 
 1. 게임 폴더의 `Resources\lazarus_logic.dsres`, `Resources\britannia_logic.dsres`, 기존 `Resources\Language.dsres`와 `Language.dll`이 있다면 모두 백업합니다.
-2. [`Ultima_V_Lazarus_Korean_B102_Copy_Paste.zip`](release/Ultima_V_Lazarus_Korean_B102_Copy_Paste.zip)을 받아 압축을 풉니다.
+2. [`Ultima_V_Lazarus_Korean_B103_Copy_Paste.zip`](release/Ultima_V_Lazarus_Korean_B103_Copy_Paste.zip)을 받아 압축을 풉니다.
 3. 압축 안의 `Copy_to_Dungeon_Siege_1` 폴더 내용 전체를 Dungeon Siege 1 폴더에 그대로 붙여넣고 덮어씁니다.
 4. `Create_Ultima_V_Lazarus_Shortcut.cmd`를 더블클릭합니다.
 5. 바탕화면에 만들어진 `Ultima V - Lazarus v1.20` 바로가기로 실행합니다.
 
-ZIP SHA-256: `794435219B41F781455F77D12ADAB3164AEF68A4195E9EC952E8C5E0D2DA46E7`
+ZIP SHA-256: `B4D0D25EF2D2956DAC5469B3CB73BA43F59CA1E72DB4DB1080EE6671925B7DA1`
 
 기본 붙여넣기 대상은 다음 위치입니다.
 
@@ -65,7 +65,7 @@ python tools\apply_korean_patch.py "C:\Games\Steam\steamapps\common\Dungeon Sieg
 
 붙여넣기 패키지는 `굴림 18` 글꼴이 설정된 한국어 `Language.dsres`를 포함하므로 이 과정은 선택 사항입니다. 다른 Dungeon Siege 1 한글 패치나 Windows 글꼴을 사용하려면 `tools/build_font_test.py`로 사용자의 `Language.dsres`를 보강할 수 있습니다.
 
-제공받은 Dungeon Siege 1 한글 패치는 글꼴 하나만 쓰지 않습니다. 활성 매핑은 기본·12p·자막에 `굴림`, 14p·16p·20p에 `궁서`를 사용합니다. B102는 이 여섯 매핑을 그대로 보존하고 Lazarus 대화용 `굴림 18` 매핑 하나만 추가합니다.
+제공받은 Dungeon Siege 1 한글 패치는 글꼴 하나만 쓰지 않습니다. 활성 매핑은 기본·12p·자막에 `굴림`, 14p·16p·20p에 `궁서`를 사용합니다. B103은 이 여섯 매핑을 그대로 보존하고 Lazarus 대화용 `굴림 18` 매핑 하나만 추가합니다.
 
 ```powershell
 python tools\build_font_test.py `
@@ -109,7 +109,8 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 - DSRES 재추출 및 비수정 리소스 무결성 검증
 - 대화 텍스트 참조 34,871개와 저장 항목 34,877개 검증
 - B097의 활성 영문 잔존 57곳 추가 반영
-- Lazarus 1.20 원본 전체 재검수 표시 문구 479곳 추가 반영
+- Lazarus 1.20 원본 전체 재검수 표시 문구 491곳 추가 반영
+- 공용 경비 대화의 GAS 우회 저장과 선택지 비교 문자열 일치 검증
 - 확정 표시 미번역 및 동적 호칭 잔존 0건
 
 세부 검증 수치는 [검증 기록](docs/VERIFICATION.md)을 참고하세요.
@@ -118,7 +119,7 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 
 - 환경에 따라 글자 `떻`의 모양이 깨질 수 있으나 문맥은 판독 가능합니다.
 - 간판·효과음 자막 등 PSD 이미지에 그려진 81개 텍스트는 이번 패치 대상이 아닙니다.
-- B102는 정적 무결성 검증과 추가 문구의 게임 내 스모크 테스트를 통과했습니다.
+- B103은 정적 무결성 검증을 통과했습니다. 기존 B098~B102 범위의 게임 내 스모크 테스트 결과도 그대로 보존됩니다.
 
 ## 번역 데이터와 도구
 
@@ -126,7 +127,7 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 - `translations/B096.tsv`: 추출 QA에서 보강한 172개 항목
 - `translations/B097_residual_patches.json`: 위치 한정 잔존 문자열 검증 기록
 - `translations/B099_Static_Translation.tsv`: 재검수에서 보강한 UI·주문·아이템 문구
-- `translations/B098-B102_reaudit_summary.json`: 전체 재검수 단계와 제외 사유 요약
+- `translations/B098-B103_reaudit_summary.json`: 전체 재검수 단계와 제외 사유 요약
 - `tools/apply_korean_patch.py`: 사용자 원본에 한국어 패치 설치
 - `tools/build_font_test.py`: 사용자 소유 한국어 `Language.dsres`에 Lazarus 폰트 키 추가
 - `tools/make_u5k_delta.py`: 유지보수용 델타 생성기
