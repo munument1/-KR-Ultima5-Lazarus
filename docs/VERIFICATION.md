@@ -8,7 +8,7 @@
 | `britannia_logic.dsres` | 1,564,671 | `5A7A7EA408917CE8B15C82C52419C3B87032D91C8038ECF8E8D76F59BEA21CF2` |
 | `zzz_U5K_Text_OnDemand.dsres` | 1,265,770 | `CD8D49743BA1DA20FFDA6CC95E7B5EC811E13BEBE3D0FFA3FBC90DAA94C2443E` |
 
-붙여넣기 ZIP SHA-256은 `554AFDE77CD5BD8A4159200703FCF78D8510948113F82AD6FBBB94D4D44C8BD3`입니다. ZIP 안의 한국어 `Language.dsres` SHA-256은 `97DD77E56F51A19ED17722A28CCF31C84E99791B717AEEA2646FDF835A52EAA1`, Steam 호환형 `Language.dll` SHA-256은 `E59712897B932E80C88DA15165AF5A12475313F4E01C27D41151B3BBA1547559`입니다. 기존 한글판의 활성 글꼴 매핑 여섯 개를 모두 보존하고 Lazarus 대화 글꼴 `b_gui_fnt_20p_laztalk = "굴림,18"`만 추가했습니다.
+붙여넣기 ZIP SHA-256은 `794435219B41F781455F77D12ADAB3164AEF68A4195E9EC952E8C5E0D2DA46E7`입니다. ZIP 안의 한국어 `Language.dsres` SHA-256은 `97DD77E56F51A19ED17722A28CCF31C84E99791B717AEEA2646FDF835A52EAA1`, Steam 호환형 `Language.dll` SHA-256은 `E59712897B932E80C88DA15165AF5A12475313F4E01C27D41151B3BBA1547559`입니다. 기존 한글판의 활성 글꼴 매핑 여섯 개를 모두 보존하고 Lazarus 대화 글꼴 `b_gui_fnt_20p_laztalk = "굴림,18"`만 추가했습니다.
 
 원본과 재패킹 `Language.dll`의 RT_STRING 428개 및 RCDATA 1개를 키·언어·크기·SHA-256으로 비교한 결과 리소스 내용 불일치는 0개였습니다. 재패킹본은 한글과 공용 UI가 정상이며, 원본 DLL에서 재현된 종료 시 SmartHeap `MEM_BAD_POINTER` 경고가 발생하지 않는 것을 실기로 확인했습니다.
 
@@ -30,6 +30,7 @@
 
 ## 실기 확인
 
+- B098~B102 추가 UI·주문·아이템·대화 선택지·시간 표시 문구 스모크 테스트 통과
 - 인트로와 시스템 초기화 문구 정상
 - 아이올로 일반 대화 정상
 - 사망 처리 후 월드 이동 정상

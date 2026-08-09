@@ -44,6 +44,6 @@
     "b097_occurrences_preserved": 57,
     "missing_korean_storage": 0,
     "resource_path_sets_preserved": true,
-    "runtime_smoke_test": "pending"
+    "runtime_smoke_test": "passed"
   }
 }
