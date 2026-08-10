@@ -1,0 +1,32 @@
+Ultima V: Lazarus 한국어 패치 B104 - Runtime QA
+====================================================
+
+B103을 기준으로 실제 게임 코드의 화면 출력 경로를 다시 검사해 보완한 빌드입니다.
+
+주요 수정
+- 일반 게임 대화의 고정 영문 선택지 1,246개 호출을 한국어 표시로 전환했습니다.
+- 대응하는 remove_keyword$ 1,188개 호출도 같은 한국어 표시값으로 맞췄습니다.
+- 183개 대화 스크립트에서 확인된 동적 인명/호칭 누출 517개 위치를 기존 B103 명칭에 맞춰 보완했습니다.
+- 트레이너 선택지 Destruction / Protection을 각각 '파괴' / '보호'로 표시하고 선택 판정도 함께 보정했습니다.
+- Negate Magic 상태에서 주문 실패 시 표시되는 'fizzle...'을 '주문이 무효화되었다...'로 번역했습니다.
+- Shadowlord 화면명 Faulinei / Astaroth / Nosfentor를 각각 '파울리네이' / '아스타로스' / '노스펜토르'로 보완했습니다.
+- 기존 번역 시트에 있었지만 선택지 호출에 남아 있던 Provisions / Poison 등도 보완했습니다.
+
+의도적으로 원문 유지
+- Words of Power: Avidus, Fallax, Ignavus, Infama, Inopia, Malum, Vilis, Veramocor
+- 암호/특수어: Impera, Maltari
+- 만트라/음절: Cah, Ra
+- 문맥상 특수어: Ni?
+- 개발자용 conversation_debugger_npc.skrit의 디버그 선택지는 번역하지 않았습니다.
+
+검증
+- 외부 한국어 텍스트 팩 886개 검사
+- 외부 텍스트 참조 38,585개: 팩 누락 0, 인덱스 오류 0
+- 최대 텍스트 팩 크기 12,000 bytes (< 16,384)
+- 수정 SKRIT 267개: 문자열/중괄호/소괄호 구조 오류 0
+- 일반 게임 add_keyword$/remove_keyword$에 남은 영문은 위의 의도적 원문 유지 항목뿐
+- lazarus_logic 1,113 / britannia_logic 651 / OnDemand 308 리소스 전체 재추출 및 바이트 대조 통과
+
+알려진 제한
+- PSD 이미지에 그려진 텍스트 81개는 기존과 동일하게 번역 대상에서 제외됩니다.
+- 구조적 정적 검증은 통과했지만, Dungeon Siege 1 엔진의 실제 런타임 호환성은 게임 내 테스트가 최종 기준입니다.
