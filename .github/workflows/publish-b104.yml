@@ -1,0 +1,31 @@
+name: Publish B104 release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip
+      - release/B104_RELEASE_NOTES.md
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify release asset
+        run: echo "aa3ec07533e6ffadde1750cda6a192f7a213315018e1e99020ea6ca3a89270bc  release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip" | sha256sum -c -
+      - name: Create or refresh GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=v0.104.0-preview
+          ASSET=release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$ASSET" --clobber
+            gh release edit "$TAG" --title "Ultima V: Lazarus 한국어 패치 B104 Runtime QA" --notes-file release/B104_RELEASE_NOTES.md
+          else
+            gh release create "$TAG" "$ASSET" --target main --title "Ultima V: Lazarus 한국어 패치 B104 Runtime QA" --notes-file release/B104_RELEASE_NOTES.md
+          fi
