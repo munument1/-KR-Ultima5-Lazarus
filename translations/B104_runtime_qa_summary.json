@@ -1,0 +1,41 @@
+{
+  "patch_version": "B104",
+  "target": "Ultima V: Lazarus 1.20 for Dungeon Siege 1",
+  "focus": "runtime residual English QA",
+  "dialogue_option_add_occurrences": 1246,
+  "dialogue_option_remove_occurrences": 1188,
+  "dynamic_name_title_occurrences": 517,
+  "dialogue_scripts_with_dynamic_name_fixes": 183,
+  "modified_skrit_files": 267,
+  "external_text_packs": 886,
+  "external_text_references": 38585,
+  "missing_pack_references": 0,
+  "bad_pack_indices": 0,
+  "max_pack_bytes": 12000,
+  "tank_resources": {
+    "lazarus_logic": 1113,
+    "britannia_logic": 651,
+    "zzz_U5K_Text_OnDemand": 308
+  },
+  "target_files": {
+    "lazarus_logic.dsres": {
+      "size": 3643696,
+      "sha256": "B6A89DB72B1F0966D6162AC3D81A87FACCA4F10E947C924D8E4055287ACB4052"
+    },
+    "britannia_logic.dsres": {
+      "size": 1566048,
+      "sha256": "19920F68F7DBCB7D8A5AD65F397142852BCD05E33F5E4B3A0230723EE70235AD"
+    },
+    "zzz_U5K_Text_OnDemand.dsres": {
+      "size": 1279416,
+      "sha256": "3F40889D369CC265F9E7610B7B08166AD543F98A0C5B5133C249EF44ADDAE4CF"
+    }
+  },
+  "intentional_english": [
+    "Avidus", "Fallax", "Ignavus", "Infama", "Inopia", "Malum", "Vilis", "Veramocor",
+    "Impera", "Maltari", "Cah", "Ra", "Ni?"
+  ],
+  "excluded_image_text": 81,
+  "static_verification": "passed",
+  "runtime_verification": "pending"
+}
