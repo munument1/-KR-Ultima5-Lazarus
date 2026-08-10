@@ -23,7 +23,7 @@ C:\Games\Steam\steamapps\common\Dungeon Siege 1
 4. `Create_Ultima_V_Lazarus_Shortcut.cmd`를 더블클릭합니다.
 5. 바탕화면에 만들어진 `Ultima V - Lazarus v1.20` 바로가기로 실행합니다.
 
-ZIP SHA-256: `F06ADB7238782F6580D1C2A73D07D2F7EE08564BEE470B405D3DE2DB5A643FF6`
+ZIP SHA-256: `AA3EC07533E6FFADDE1750CDA6A192F7A213315018E1E99020EA6CA3A89270BC`
 
 붙여넣기 폴더에는 Steam 호환형 `Language.dll`, 한국어 `Language.dsres`, Lazarus 대화 글꼴 매핑이 함께 들어 있습니다. **별도의 Dungeon Siege 1 한글 패치를 먼저 설치할 필요가 없습니다.**
 
@@ -46,7 +46,7 @@ ZIP SHA-256: `F06ADB7238782F6580D1C2A73D07D2F7EE08564BEE470B405D3DE2DB5A643FF6`
 
 붙여넣기 패키지는 `굴림 18` 글꼴이 설정된 한국어 `Language.dsres`를 포함합니다. 다른 Dungeon Siege 1 한글 패치나 Windows 글꼴을 사용하려면 `tools/build_font_test.py`를 이용할 수 있습니다.
 
-기존 한국어 리소스의 활성 글꼴 매핑을 보존하고 Lazarus 대화용 매핑을 추가합니다.
+기존 한국어 리소스의 활성 글꼴 매핑을 보존하고 Lazarus 키만 추가합니다.
 
 ```text
 b_gui_fnt_20p_laztalk = "굴림,18";
