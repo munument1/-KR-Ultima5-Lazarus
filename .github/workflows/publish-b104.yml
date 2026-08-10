@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Verify release asset
-        run: echo "f06adb7238782f6580d1c2a73d07d2f7ee08564bee470b405d3de2db5a643ff6  release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip" | sha256sum -c -
+        run: echo "aa3ec07533e6ffadde1750cda6a192f7a213315018e1e99020ea6ca3a89270bc  release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip" | sha256sum -c -
       - name: Create or refresh GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
