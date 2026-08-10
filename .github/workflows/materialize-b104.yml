@@ -69,7 +69,7 @@ jobs:
           set -euo pipefail
           rm -f release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip
           python tools/build_b104_release_zip.py release/Copy_to_Dungeon_Siege_1 release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip
-          echo "f06adb7238782f6580d1c2a73d07d2f7ee08564bee470b405d3de2db5a643ff6  release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip" | sha256sum -c -
+          echo "aa3ec07533e6ffadde1750cda6a192f7a213315018e1e99020ea6ca3a89270bc  release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip" | sha256sum -c -
 
       - name: Commit generated release assets
         run: |
