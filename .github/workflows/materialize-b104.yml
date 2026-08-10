@@ -1,0 +1,85 @@
+name: Materialize B104 runtime QA
+
+on:
+  push:
+    branches: [agent/release-b104]
+    paths:
+      - .github/workflows/materialize-b104.yml
+      - tools/generate_b104_runtime.py
+      - tools/ds1_tank_tool.py
+      - tools/build_b104_release_zip.py
+      - translations/B104_option_map.b85
+      - translations/B104_dynamic_name_map.b85
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download verified B103 Names Fixed base
+        run: |
+          set -euo pipefail
+          mkdir -p .b104/base .b104/work
+          curl -fL --retry 3 -o .b104/B103.zip \
+            https://github.com/munument1/-KR-Ultima5-Lazarus/releases/download/v0.103.0-preview/Ultima_V_Lazarus_Korean_B103_Names_Fixed_Smith_Hover.zip
+          echo "5f4299872b9a1bdf6293e762927c5480ba43d80a78b4192b5fbbd244895af6fb  .b104/B103.zip" | sha256sum -c -
+          unzip -q .b104/B103.zip -d .b104/base
+
+      - name: Extract B103 tanks
+        run: |
+          set -euo pipefail
+          python tools/ds1_tank_tool.py extract .b104/base/Copy_to_Dungeon_Siege_1/Resources/lazarus_logic.dsres .b104/work/base_lazarus
+          python tools/ds1_tank_tool.py extract .b104/base/Copy_to_Dungeon_Siege_1/Resources/britannia_logic.dsres .b104/work/base_britannia
+          python tools/ds1_tank_tool.py extract .b104/base/Copy_to_Dungeon_Siege_1/Resources/zzz_U5K_Text_OnDemand.dsres .b104/work/base_ondemand
+
+      - name: Generate B104 replacements
+        run: |
+          set -euo pipefail
+          python tools/generate_b104_runtime.py \
+            .b104/work/base_lazarus \
+            .b104/work/base_britannia \
+            .b104/work/base_ondemand \
+            .b104/work/generated \
+            .b104/work/replacements \
+            --option-map translations/B104_option_map.b85 \
+            --dynamic-map translations/B104_dynamic_name_map.b85
+
+      - name: Repack B104 tanks
+        run: |
+          set -euo pipefail
+          python tools/ds1_tank_tool.py repack .b104/base/Copy_to_Dungeon_Siege_1/Resources/lazarus_logic.dsres .b104/work/replacements/lazarus release/Copy_to_Dungeon_Siege_1/Resources/lazarus_logic.dsres
+          python tools/ds1_tank_tool.py repack .b104/base/Copy_to_Dungeon_Siege_1/Resources/britannia_logic.dsres .b104/work/replacements/britannia release/Copy_to_Dungeon_Siege_1/Resources/britannia_logic.dsres
+          python tools/ds1_tank_tool.py repack .b104/base/Copy_to_Dungeon_Siege_1/Resources/zzz_U5K_Text_OnDemand.dsres .b104/work/replacements/ondemand release/Copy_to_Dungeon_Siege_1/Resources/zzz_U5K_Text_OnDemand.dsres
+
+      - name: Verify B104 tank hashes
+        run: |
+          set -euo pipefail
+          echo "b6a89db72b1f0966d6162ac3d81a87facca4f10e947c924d8e4055287acb4052  release/Copy_to_Dungeon_Siege_1/Resources/lazarus_logic.dsres" | sha256sum -c -
+          echo "19920f68f7dbcb7d8a5ad65f397142852bcd05e33f5e4b3a0230723ee70235ad  release/Copy_to_Dungeon_Siege_1/Resources/britannia_logic.dsres" | sha256sum -c -
+          echo "3f40889d369cc265f9e7610b7b08166ad543f98a0c5b5133c249ef44addae4cf  release/Copy_to_Dungeon_Siege_1/Resources/zzz_U5K_Text_OnDemand.dsres" | sha256sum -c -
+
+      - name: Build deterministic B104 ZIP
+        run: |
+          set -euo pipefail
+          rm -f release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip
+          python tools/build_b104_release_zip.py release/Copy_to_Dungeon_Siege_1 release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip
+          echo "f06adb7238782f6580d1c2a73d07d2f7ee08564bee470b405d3de2db5a643ff6  release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip" | sha256sum -c -
+
+      - name: Commit generated release assets
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add release/Copy_to_Dungeon_Siege_1/Resources release/Ultima_V_Lazarus_Korean_B104_Copy_Paste.zip
+          if git diff --cached --quiet; then
+            echo "No generated changes"
+          else
+            git commit -m "Generate B104 release assets"
+            git push origin HEAD:agent/release-b104
+          fi
